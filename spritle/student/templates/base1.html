@@ -3,37 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
-    <style>
-      .login_class {
-        border: solid black 2px;
-        padding: 20px;
-        border-radius: 2px;
-        width:50%;
-      }
-      .navbar ul {
-        position:relative;
-        list-style-type: none;
-        margin: 0;
-        padding: 50px;
-        display:block;
-        overflow: hidden;
-        background-color: #333;
-      }
-      .navbar li {
-        float: left;
-      }
-      .navbar li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-    </style>
-  </head>
+    </head>
   <body>
     <h2>Student</h2>
-    <nav class="navbar">
+    <nav>
       {% if user.is_authenticated %}
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
