@@ -29,7 +29,7 @@ class student_signup(View):
             user=form.save()
             user.groups.add(2)
             user.save()
-            form = userform()
+            return redirect("login")
         context  = {
             'form': form
         }
@@ -68,11 +68,13 @@ class calculator(View):
 
     def get(self, request):
         if request.user.is_authenticated:
-            form = calculationform()
-            context = {
-                'form': form
-            }
-            return render(request,"student/templates/home.html",context)
+            if is_student(request):
+                form = calculationform()
+                context = {
+                    'form': form
+                }
+                return render(request,"student/templates/home.html",context)
+            return HttpResponse("student access denied")
 
         else:
             return redirect('login')

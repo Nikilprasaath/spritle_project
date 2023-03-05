@@ -1,10 +1,14 @@
-{% extends 'base.html' %}
-
+{% include 'base.html' %}
+<style>
+    .navbar ul{
+      width: 65%;
+    }
+  </style>
 {% block content %}
-  <h1>Welcome, {{ request.user.username }}!</h1>
-  <h2>Activity Log</h2>
-  <h3><a href="{% url 'master-tasks' %}">All activites</a></h3>
+  <li><a href="{% url 'master-tasks' %}">All activities</a></li>
+  <li style="float:right"><a>Welcome, {{ request.user.username }}!</a></li></ul></nav>
   <table>
+    <center><h2>Activity Log</h2></center>
     <thead>
       <tr>
         <th>Student</th>

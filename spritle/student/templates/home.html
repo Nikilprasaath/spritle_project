@@ -1,9 +1,15 @@
 {% extends 'base1.html' %}
 
 {% block content %}
+  <li style="float:right"><a>Welcome, {{ request.user.username }}!</a></li></ul></nav>
+  
+  <div class="login_class">
   <form method="post">
     {% csrf_token %}
-    {{form.as_p }}
-    <input type="submit" value="submit" />
+    <ul>
+    <li>{{form.as_p }}</li>
+    <li><input type="submit" value="submit" /></li>
+    </ul>
   </form>
+  </div>
 {% endblock %}

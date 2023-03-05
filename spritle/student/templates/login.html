@@ -1,19 +1,20 @@
 {% extends 'base1.html' %}
-{% load static %}
-
 
 
   {% block content %}
-  <div> 
+  <li><a href="{% url 'student-signup' %}">Student Signin</a></li></ul></nav>
+  <div class="login_class"> 
     <form method="post">
       {% csrf_token %}
-      <label for="username">Username:</label>
-      <input type="text" name="username" required>
+      <ul>
+      <li><label for="username">Username:</label>
+      <input type="text" name="username" required></li>
       <br>
-      <label for="password">Password:</label>
-      <input type="password" name="password" required>
+      <li><label for="password">Password :</label>
+      <input type="password" name="password" required></li>
       <br>
-      <button type="submit">Login</button>
+      <li><button type="submit">Login</button></li>
+      </ul>
       {% if error_message %}
         <p>{{ error_message }}</p>
       {% endif %}

@@ -3,18 +3,79 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
+    <style>
+      .login_class {
+        border: solid black 2px;
+        padding:0;
+        border-radius: 2px;
+        width:40%;
+        height:400px;
+        box-sizing: border-box;
+        margin:auto;
+      }
+      .login_class ul{
+        padding:100px 0px;       
+        height:400px auto;
+      }
+      .login_class li{
+        text-align: center;
+        list-style: none;
+        padding: 0;
+      }
+      .navbar ul {
+        width: 40%;
+        position:relative;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        display:block;
+        overflow: hidden;
+        background-color: #333;
+      }
+      .navbar li {
+        float: left;
+      }
+      .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      table {
+        width:65%; 
+        height:10%;
+        margin:auto;
+        border:2px solid black;
+        border-collapse: collapse;
+  }
+      table th, td {
+        width:auto; 
+        height:10%;
+        margin:auto;
+        border:2px solid black;
+        border-collapse: collapse;
+        padding:10px;
+      }
+    </style>
   </head>
   <body>
-    <h2>Master</h2>
-    <nav>
+    <h1><center>Master</center></h1>
+    <nav class="navbar">
       {% if user.is_authenticated %}
-        <a href="{% url 'master-tasks' %}">Home</a>
-        <a href="{% url 'master-logout' %}">Logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">Student Login</a>
-        <a href="{% url 'master-signup' %}">Master Signin</a>
-      {% endif %}
-    </nav>
-    {% block content %}{% endblock %}
+   
+    <ul>
+      <li><a href="{% url 'master-tasks' %}">Home</a></li>
+      <li><a href="{% url 'master-logout' %}">Logout</a></li>
+    
+    {% else %}
+    <ul>
+      <li><a href="{% url 'login' %}">Student Login</a></li>
+      
+    {% endif %}
+
+  {% block content %}{% endblock %}
+
   </body>
 </html>

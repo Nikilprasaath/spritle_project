@@ -1,9 +1,14 @@
 {% include 'base1.html' %}
-
+<style>
+  .navbar ul{
+    width: 60%;
+  }
+</style>
 {% block content %}
-  <h1>Welcome, {{ request.user.username }}!</h1>
-  <h2>Activity Log</h2>
+  <li style="float:right"><a>Welcome, {{ request.user.username }}!</a></li></ul></nav>
+  <div class="tab">
   <table>
+    <center><h2>Activity Log</h2></center>
     <thead>
       <tr>
         <th>Left_number</th>
@@ -31,4 +36,5 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
 {% endblock %}

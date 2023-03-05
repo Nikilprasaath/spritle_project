@@ -1,18 +1,23 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-    <label for="username">Username:</label>
-    <input type="text" name="username" required>
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required>
-    <br>
-    <button type="submit">Login</button>
-    {% if error_message %}
-      <p>{{ error_message }}</p>
-    {% endif %}
-  </form>
+<li><a href="{% url 'master-signup' %}">Master Signin</a></li></ul></nav>
+<div class="login_class"> 
+<form method="post">
+  {% csrf_token %}
+  <ul>
+  <li><label for="username">Username:</label>
+  <input type="text" name="username" required></li>
+  <br>
+  <li><label for="password">Password :</label>
+  <input type="password" name="password" required></li>
+  <br>
+  <li><button type="submit">Login</button></li>
+  </ul>
+  {% if error_message %}
+    <p>{{ error_message }}</p>
+  {% endif %}
+</form>
+</div>
 {% endblock %}
   

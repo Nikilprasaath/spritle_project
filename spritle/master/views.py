@@ -132,7 +132,8 @@ class master_signup(View):
             user=form.save()
             user.groups.add(1)
             user.save()
-            form = userform()
+            return redirect("master-login")
+
         context  = {
             'form': form
         }
