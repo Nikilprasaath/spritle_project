@@ -138,5 +138,3 @@ class master_signup(View):
             'form': form
         }
         return render(request,"master/templates/signup.html",context=context)
-
-
